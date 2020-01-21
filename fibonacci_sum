@@ -1,0 +1,28 @@
+//this code solves the problem 2 of the project euler challenge
+	import java.util.*;
+	public class FibonacciSum{
+		public static void main(String[] args) {
+			Scanner input = new Scanner(System.in);
+			System.out.println("enter the number of terms:");
+			int num= input.nextInt();
+			long EvenOfTerms=2;
+			long[] array=new long[num];
+			array[0]=1;
+			array[1]=2;
+			
+			for(int i=2;i<array.length;i++){
+				long x=array[i-2]+array[i-1];
+				if(x>4000000)
+					break;
+				else
+					array[i]=x;
+					if(array[i]%2==0)
+						EvenOfTerms+=array[i];
+				
+						continue;
+			}
+			
+			System.out.println(Arrays.toString(array));
+			System.out.println("Sum of the even terms = " + EvenOfTerms);
+		}
+	}
